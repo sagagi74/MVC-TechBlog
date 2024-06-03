@@ -1,2 +1,2 @@
 # MVC-TechBlog
-MVC-TechBlog
+Creating TechBlog with MVC
