@@ -9,7 +9,7 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const users = await User.bulkCreate(userData, {
-    individualHooks: true,
+    individualHooks: false,  // Change to false since we're not hashing passwords
     returning: true,
   });
 

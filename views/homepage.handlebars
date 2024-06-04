@@ -1,0 +1,9 @@
+{{#each posts}}
+  <div class="blog-post">
+    <div class="post-header">
+      <h2>{{this.title}}</h2>
+      <span>Posted by {{this.user.username}} on {{format_date this.createdAt}}</span>
+    </div>
+    <p>{{this.content}}</p>
+  </div>
+{{/each}}
