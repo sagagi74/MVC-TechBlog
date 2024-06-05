@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 // Render the login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
   res.render('login');
@@ -58,6 +58,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+// Render the new post page
+router.get('/new-post', withAuth, (req, res) => {
+  res.render('new-post', {
+    logged_in: req.session.logged_in,
+  });
 });
 
 module.exports = router;

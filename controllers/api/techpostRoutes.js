@@ -24,7 +24,7 @@ router.put('/:id', withAuth, async (req, res) => {
     });
 
     if (!updatedPost[0]) {
-      res.status(404).json({ message: 'Error finding post with this id!' });
+      res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 
@@ -43,7 +43,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: 'Error finding post with this id!' });
+      res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 

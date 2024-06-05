@@ -1,5 +1,5 @@
-// event listener 
-document.querySelector('#login-form').addEventListener('submit', async (event) => {
+     // event listener 
+     document.querySelector('#login-form').addEventListener('submit', async (event) => {
     // Prevent the default 
     event.preventDefault();
   
@@ -16,9 +16,14 @@ document.querySelector('#login-form').addEventListener('submit', async (event) =
         headers: { 'Content-Type': 'application/json' },
       });
   
-      // if ok, redirect the user to the home
+      // if ok
       if (response.ok) {
-        document.location.replace('/');
+
+        //fixing it because of redirect issue
+       // document.location.replace(data.redirect);
+     // location.reload();
+   
+      document.location.replace('/dashboard');
       } else {
         // login fails
         alert(' log in has failed');
