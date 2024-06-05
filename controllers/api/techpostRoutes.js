@@ -1,7 +1,29 @@
 const router = require('express').Router();
 const { TechPost } = require('../../models');
+//if login in not true it sill direct to login page
 const withAuth = require('../../utils/auth');
 
+// delete a tech post by its ID
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await TechPost.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!postData) {
+      res.status(404).json({ message: 'No post associated with this id!' });
+      return;
+    }
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//new tech post
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await TechPost.create({
@@ -14,7 +36,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+//update an existing tech post by its ID
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedPost = await TechPost.update(req.body, {
@@ -24,7 +46,7 @@ router.put('/:id', withAuth, async (req, res) => {
     });
 
     if (!updatedPost[0]) {
-      res.status(404).json({ message: 'No post found with this id!' });
+      res.status(404).json({ message: 'No post associated with this id!' });
       return;
     }
 
@@ -34,23 +56,5 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const postData = await TechPost.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-
-    if (!postData) {
-      res.status(404).json({ message: 'No post found with this id!' });
-      return;
-    }
-
-    res.status(200).json(postData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

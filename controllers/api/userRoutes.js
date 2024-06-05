@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// Logging in a user
+// Logging routes in a user
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
@@ -37,6 +37,24 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+
+// Signing up a new user
+router.post('/signup', async (req, res) => {
+  try {
+    const newUser = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
+
+      res.json({ user: newUser, message: 'Sign-up successful and logged in!' });
+    });
+  } catch (err) {
+    console.error(err); // Log the error for debugging
+    res.status(400).json({ message: 'Unable to sign up. Please try again later.', error: err.message });
   }
 });
 

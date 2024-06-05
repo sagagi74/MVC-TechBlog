@@ -9,6 +9,8 @@ const sequelize = require('../config/connection');
 //}
 //case sensitive issue
 
+
+//user table details
 class User extends Model {
   checkPassword(loginPw) {
     return loginPw === this.password;
@@ -32,7 +34,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8]
+        len: [7]
       }
     }
   },

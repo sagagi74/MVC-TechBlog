@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class TechPost extends Model {}
 //case sensitive issue
-
+//techpost table details
 TechPost.init(
   {
     id: {

@@ -1,12 +1,17 @@
 [
     {
-      "title": "hero Post1",
-      "content": "it is test post1.",
+      "title": "Why MVC is so Important",
+      "content": "MVC Allows devlopers to maintain a true separation of concerns, devising thier code between Models, views and controllers.",
       "user_id": 1
     },
     {
-      "title": "Test Post2",
-      "content": "it is test post2.",
+      "title": "Authetication VS Athorization",
+      "content": "Authentication means confirming your own identity where authorization means being allowed access to sytem.",
+      "user_id": 2
+    },
+    {
+      "title": "What is Computer Programming",
+      "content": "Computer programming is the process of writing code to facilitate specific actions in a computer, application or software program, and instructs them on how to perform.",
       "user_id": 2
     }
   ]

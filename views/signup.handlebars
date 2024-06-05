@@ -1,0 +1,19 @@
+
+<main>
+  {{#if logged_in}}
+    <h2>You are logged in</h2>
+  {{else}}
+    <div id="signup-form">
+      <h2>Sign Up</h2>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="signup-username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="signup-password" name="password">
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  {{/if}}
+  <script src="/js/signup.js"></script>
+</main>
+

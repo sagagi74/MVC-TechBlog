@@ -1,3 +1,7 @@
+/* 
+Global Styles: 
+Sets font, background color, and removes default margin and padding.
+*/
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background-color: #f0f8ff;
@@ -5,6 +9,10 @@ body {
   padding: 0;
 }
 
+/* 
+Header Styles: 
+Styles for the header including background color, text color, and padding.
+*/
 header {
   background-color: #ff6347;
   color: white;
@@ -12,6 +20,10 @@ header {
   position: relative;
 }
 
+/* 
+Header Content Styles: 
+Styles for the content inside the header including layout and spacing.
+*/
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -21,12 +33,20 @@ header {
   padding: 0 20px;
 }
 
+/* 
+Blog Title Styles: 
+Styles for the blog title including text alignment and padding.
+*/
 .blog-title {
   text-align: left;
   margin-top: 0;
   padding-left: 20px;
 }
 
+/* 
+Heading 1 Styles: 
+Styles for the main headings including margin, padding, font size, and color.
+*/
 h1 {
   margin: 0;
   padding: 20px 0;
@@ -34,6 +54,10 @@ h1 {
   color: #ffa07a;
 }
 
+/* 
+Navigation Link Styles: 
+Styles for the navigation links including color, margin, and hover effects.
+*/
 nav a {
   color: white;
   text-decoration: none;
@@ -46,6 +70,10 @@ nav a:hover {
   color: #ffebcd;
 }
 
+/* 
+Main Content Styles: 
+Styles for the main content area including width, margin, padding, background color, border radius, and box shadow.
+*/
 main {
   max-width: 1200px;
   margin: 30px auto;
@@ -55,12 +83,20 @@ main {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+/* 
+Heading 2 Styles: 
+Styles for secondary headings including color, margin, and font size.
+*/
 h2 {
   color: #4682b4;
   margin-bottom: 25px;
   font-size: 2rem;
 }
 
+/* 
+Button Styles: 
+Styles for buttons including padding, margin, background color, text color, border radius, and hover effects.
+*/
 a.button {
   display: inline-block;
   padding: 15px 25px;
@@ -77,6 +113,10 @@ a.button:hover {
   background-color: #228b22;
 }
 
+/* 
+Post Styles: 
+Styles for posts including border, border radius, margin, background color, and padding.
+*/
 .post {
   border: 2px solid #dda0dd;
   border-radius: 10px;
@@ -96,6 +136,10 @@ a.button:hover {
   color: #696969;
 }
 
+/* 
+Post Button Styles: 
+Styles for edit and delete buttons including padding, margin, background color, text color, border radius, and hover effects.
+*/
 .post .edit-btn, .post .delete-btn {
   padding: 10px 15px;
   margin-right: 15px;
@@ -111,6 +155,10 @@ a.button:hover {
   background-color: #ff1493;
 }
 
+/* 
+Edit Form Styles: 
+Styles for the edit form including margin and label display.
+*/
 .edit-form {
   margin-top: 25px;
 }
@@ -121,6 +169,10 @@ a.button:hover {
   font-weight: bold;
 }
 
+/* 
+Edit Form Input Styles: 
+Styles for inputs and textareas in the edit form including width, padding, margin, border, and border radius.
+*/
 .edit-form input, .edit-form textarea {
   width: 100%;
   padding: 15px;
@@ -129,6 +181,10 @@ a.button:hover {
   border-radius: 6px;
 }
 
+/* 
+Edit Form Button Styles: 
+Styles for buttons in the edit form including padding, background color, text color, border radius, and hover effects.
+*/
 .edit-form button {
   padding: 15px 25px;
   background-color: #4682b4;
@@ -143,6 +199,10 @@ a.button:hover {
   background-color: #5f9ea0;
 }
 
+/* 
+Blog Post Styles: 
+Styles for blog posts including border, border radius, margin, background color, and padding.
+*/
 .blog-post {
   border: 2px solid #20b2aa;
   border-radius: 10px;
@@ -151,6 +211,10 @@ a.button:hover {
   background-color: #fafad2;
 }
 
+/* 
+Post Header Styles: 
+Styles for the post header including background color, text color, layout, and padding.
+*/
 .post-header {
   background-color: #dc143c;
   color: white;
@@ -173,7 +237,10 @@ a.button:hover {
   color: #696969;
 }
 
-/* New Post Form Styles */
+/* 
+New Post Form Styles: 
+Styles for the new post form including background color, padding, border radius, box shadow, margin, and maximum width.
+*/
 .new-post-form {
   background-color: #fffacd;
   padding: 30px;
@@ -219,7 +286,10 @@ a.button:hover {
   background-color: #228b22;
 }
 
-/* Centered Login Form Styles */
+/* 
+Centered Login Form Styles: 
+Styles for the login form including background color, padding, border radius, box shadow, margin, and maximum width.
+*/
 #login-form {
   background-color: #fff;
   padding: 40px;
