@@ -16,7 +16,7 @@ if (process.env.JAWSDB_URL) {
       host: 'localhost',
       dialect: 'mysql',
       port: 3306,
-      logging: console.log, // Optional: for debugging connection issues
+      logging: console.log, // Optional: for debugging connection issues, using this I found case sensitive name issues
     }
   );
 }
