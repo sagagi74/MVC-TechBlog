@@ -7,6 +7,7 @@ const sequelize = require('../config/connection');
    // return bcrypt.compareSync(loginPw, this.password);
  // }
 //}
+//case sensitive issue
 
 class User extends Model {
   checkPassword(loginPw) {

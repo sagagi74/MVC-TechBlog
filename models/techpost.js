@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class TechPost extends Model {}
+//case sensitive issue
 
 TechPost.init(
   {
