@@ -51,11 +51,11 @@ router.post('/signup', async (req, res) => {
       req.session.user_id = newUser.id;
       req.session.logged_in = true;
 
-      res.json({ user: newUser, message: 'Sign-up successful and logged in!' });
+      res.json({ user: newUser, message: 'Sign-up successful' });
     });
   } catch (err) {
     console.error(err); // Log the error for debugging
-    res.status(400).json({ message: 'Unable to sign up. Please try again later.', error: err.message });
+    res.status(400).json({ message: 'Error on sign up. Please try again.', error: err.message });
   }
 });
 
