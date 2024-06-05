@@ -1,5 +1,6 @@
 # MVC-TechBlog
 This is Tech Blog application based on Model-View-Controller (MVC) and it is deployed in Heroku.
+it uses use the express-handlebarsLinks to an external site. package to use Handlebars.js for Views, use the MySQL2Links to an external site. and SequelizeLinks to an external site. packages to connect to a MySQL database for Models, and create an Express.js API for Controllers
 
 Github Link
 https://github.com/sagagi74/MVC-TechBlog
