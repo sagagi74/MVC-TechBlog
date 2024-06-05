@@ -21,9 +21,10 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 // Configure session middleware with Sequelize store
+// Session expires after 30 minutes of inactivity
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: { maxAge: 30 * 60 * 1000, },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
