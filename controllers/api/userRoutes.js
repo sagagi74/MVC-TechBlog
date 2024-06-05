@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 // Logging routes in a user
@@ -12,7 +13,7 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await bcrypt.compare(req.body.password, userData.password);
-    
+
     if (!validPassword) {
       res.status(400).json({ message: 'password is incorrect!' });
       return;
