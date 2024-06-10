@@ -1,0 +1,37 @@
+{{!-- Layout file reference --}}
+{{> header}}
+
+<main>
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
+    <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
+
+    <section id="comments">
+      <h2>Comments</h2>
+      {{#if comments.length}}
+        {{#each comments}}
+          <div class="comment">
+            <p>{{this.content}}</p>
+            <p>Comment by {{this.user.username}} on {{format_date this.createdAt}}</p>
+          </div>
+        {{/each}}
+      {{else}}
+        <p>No comments yet.</p>
+      {{/if}}
+    </section>
+
+    {{#if logged_in}}
+      <form id="comment-form">
+        <textarea name="comment" placeholder="Add a comment"></textarea>
+        <button type="submit">Comment</button>
+      </form>
+    {{else}}
+      <p><a href="/login">Log in</a> to add a comment.</p>
+    {{/if}}
+  </div>
+</main>
+
+{{> footer}}
+
+<script src="/js/comment.js"></script>

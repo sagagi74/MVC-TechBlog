@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { TechPost, User } = require('../models');
+const { TechPost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Route the login page
@@ -23,7 +23,6 @@ router.get('/signup', (req, res) => {
 // Route the homepage with all tech posts
 router.get('/', async (req, res) => {
   try {
-     // Find all tech posts
     const postData = await TechPost.findAll({
       include: [
         {
@@ -32,7 +31,7 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    // Serialize data 
+
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', {
@@ -75,6 +74,38 @@ router.get('/new-post', withAuth, (req, res) => {
   res.render('new-post', {
     logged_in: req.session.logged_in,
   });
+});
+
+// Route to get a post by its ID, including comments
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await TechPost.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
+    });
+
+    if (!postData) {
+      res.status(404).json({ message: 'No post found with this id!' });
+      return;
+    }
+
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      post,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
